@@ -1,5 +1,5 @@
 ;;;; qsim.lisp - a fully general quantum interpreter
-;;;; Copyright (c) 2018 Robert Smith; see LICENSE for terms.
+;;;; Copyright (c) 2018 Robert Smith; see LICENSE.txt for terms.
 
 (defglobal +I+ #2A((1 0)
                    (0 1)))

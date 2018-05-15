@@ -1,14 +1,14 @@
 ;;;; examples.lisp - examples using qsim.lisp
-;;;; Copyright (c) 2018 Robert Smith; see LICENSE for terms.
+;;;; Copyright (c) 2018 Robert Smith; see LICENSE.txt for terms.
 
 (defglobal +H+ (make-array '(2 2) :initial-contents (let ((s (/ (sqrt 2))))
                                                       (list (list s s)
                                                             (list s (- s))))))
 
-(defglobal +CNOT+ (make-array '(4 4) :initial-contents '((1 0 0 0)
-                                                         (0 1 0 0)
-                                                         (0 0 0 1)
-                                                         (0 0 1 0))))
+(defglobal +CNOT+ #2A((1 0 0 0)
+                      (0 1 0 0)
+                      (0 0 0 1)
+                      (0 0 1 0)))
 
 (defun cphase (angle)
   (make-array '(4 4) :initial-contents `((1 0 0 0)
