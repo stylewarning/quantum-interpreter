@@ -1,13 +1,13 @@
 ;;;; qsim.lisp - a fully general quantum interpreter
 ;;;; Copyright (c) 2018 Robert Smith; see LICENSE for terms.
 
-(defglobal +I+ (make-array '(2 2) :initial-contents '((1 0)
-                                                      (0 1))))
+(defglobal +I+ #2A((1 0)
+                   (0 1)))
 
-(defglobal +SWAP+ (make-array '(4 4) :initial-contents '((1 0 0 0)
-                                                         (0 0 1 0)
-                                                         (0 1 0 0)
-                                                         (0 0 0 1))))
+(defglobal +SWAP+ #2A((1 0 0 0)
+                      (0 0 1 0)
+                      (0 1 0 0)
+                      (0 0 0 1)))
 
 (defun apply-operator (matrix column)
   (let* ((matrix-size (array-dimension matrix 0))
