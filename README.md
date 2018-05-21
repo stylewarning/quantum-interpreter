@@ -2,10 +2,10 @@
 A tiny, self-contained, general-purpose quantum interpreter.
 
 # Getting started
-
-1. git clone https://github.com/tarballs-are-good/quantum-interpreter.git
-2. cd quantum-interpreter/
-3. Open up a file "quantum_programs.lisp" for example and enter
+1. Make sure you have [SBCL] installed [SBCL](http://www.sbcl.org/)
+2. git clone https://github.com/tarballs-are-good/quantum-interpreter.git
+3. cd quantum-interpreter/
+4. Open a file. "quantum_programs.lisp" for example, and enter
 ```
 (load "qsim.lisp")
 (load "examples.lisp")
@@ -40,7 +40,7 @@ A tiny, self-contained, general-purpose quantum interpreter.
 sbcl --noinform --load quantum_programs.lisp
 ```
 
-5. To exit the REPL
+5. To exit REPL
 ```
 * (quit)
 ```
