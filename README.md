@@ -2,7 +2,7 @@
 A tiny, self-contained, general-purpose quantum interpreter.
 
 # Getting started
-1. Make sure you have [SBCL] installed [SBCL](http://www.sbcl.org/)
+1. Make sure you have [SBCL](http://www.sbcl.org/) installed 
 2. git clone https://github.com/tarballs-are-good/quantum-interpreter.git
 3. cd quantum-interpreter/
 4. Open a file. "quantum_programs.lisp" for example, and enter
