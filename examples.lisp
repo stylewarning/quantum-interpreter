@@ -1,7 +1,7 @@
 ;;;; examples.lisp - examples using qsim.lisp
 ;;;; Copyright (c) 2018 Robert Smith; see LICENSE.txt for terms.
 
-(defglobal +H+ (make-array '(2 2) :initial-contents (let ((s (/ (sqrt 2))))
+(defglobal +H+ (make-array '(2 2) :initial-contents (let ((s (/ (sqrt 2.0d0))))
                                                       (list (list s s)
                                                             (list s (- s))))))
 
@@ -14,7 +14,7 @@
   (make-array '(4 4) :initial-contents `((1 0 0 0)
                                          (0 1 0 0)
                                          (0 0 1 0)
-                                         (0 0 0 ,(cis angle)))))
+                                         (0 0 0 ,(cis (coerce angle 'double-float))))))
 
 (defun bell (p q)
   `((gate ,+H+ ,p)
