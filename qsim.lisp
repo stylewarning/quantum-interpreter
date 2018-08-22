@@ -94,7 +94,9 @@
     (labels ((swap (i)
                (lift +swap+ i n))
              (transpositions-to-operator (trans)
-               (reduce #'compose-operators trans :key #'swap)))
+               (reduce #'compose-operators trans
+                       :key #'swap
+                       :initial-value (kronecker-expt +I+ n))))
       (let* ((U01 (lift U 0 n))
              (from-space (append (reverse qubits)
                                  (loop :for i :below n
