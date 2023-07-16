@@ -1,5 +1,5 @@
 ;;;; qsim.lisp - a fully general quantum interpreter
-;;;; Copyright (c) 2018 Robert Smith; see LICENSE.txt for terms.
+;;;; Copyright (c) 2018-2022 Robert Smith; see LICENSE.txt for terms.
 
 (defglobal +I+ #2A((1 0)
                    (0 1)))
@@ -50,7 +50,9 @@
     ((= n 1) U)
     (t (kronecker-multiply (kronecker-expt U (1- n)) U))))
 
-(defstruct machine quantum-state measurement-register)
+(defstruct machine
+  quantum-state
+  measurement-register)
 
 (defun dimension-qubits (d)
   (1- (integer-length d)))
@@ -137,9 +139,9 @@
 (defun run-quantum-program (qprog machine)
   (loop :for (instruction . payload) :in qprog
         :do (ecase instruction
-              ((gate)
+              ((GATE)
                (destructuring-bind (gate &rest qubits) payload
                  (apply-gate (machine-quantum-state machine) gate qubits)))
-              ((measure)
+              ((MEASURE)
                (observe machine)))
         :finally (return machine)))
